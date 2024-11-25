@@ -1,5 +1,6 @@
 // src/Pages/Skills.js
 import React from 'react';
+import ReviewPopup from '../Components/ReviewPopup';
 import { motion } from 'framer-motion';
 import { FaReact, FaPython, FaCss3Alt, FaHtml5, FaDatabase, FaGithub, FaJsSquare } from 'react-icons/fa';
 import { SiDjango, SiBootstrap, SiTailwindcss } from 'react-icons/si';
@@ -20,12 +21,19 @@ const skillsData = [
 const Skills = ({ darkMode }) => {
   return (
     <div className={`p-6 ${darkMode ? 'bg-gray-700 text-white' : 'bg-gray-200 text-black'}`}>
-      <h2 className="text-3xl font-bold text-center mb-8">Skills</h2>
-      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <ReviewPopup
+          message="Check out my latest reviews!" 
+          showDuration={5000}
+          hideDuration={30000}
+          darkMode={darkMode}
+         
+        />
+       <h2 className="text-3xl font-bold text-center mb-8">Skills</h2>
+      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
         {skillsData.map((skill, index) => (
           <motion.div
             key={index}
-            className={`flex flex-col items-center p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow ${
+            className={`flex flex-col items-center p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-l-4 border-purple-500  ${
               darkMode ? 'bg-gray-500 text-white' : 'bg-white text-black'
             }`}
             initial={{ opacity: 0, y: 20 }}
@@ -40,6 +48,10 @@ const Skills = ({ darkMode }) => {
                 <div className="bg-purple-500 h-2.5 rounded-full" style={{ width: skill.proficiency }}></div>
               </div>
               <p className="text-center text-xs mt-1">{skill.proficiency} proficiency</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400 text-center mt-2">
+  Beginner (0–50%), Intermediate (50–80%), Advanced (80%+)
+</p>
+
             </div>
           </motion.div>
         ))}

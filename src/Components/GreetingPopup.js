@@ -8,20 +8,17 @@ function GreetingPopup({ setShowGreeting }) {
     // Set a timer to automatically close the greeting after 10 minutes (600,000 ms)
     const timer = setTimeout(() => {
       setShowGreeting(false);
-    }, 600000);
+    }, 5000);
 
-    // Clear the timer if the component unmounts
     return () => clearTimeout(timer);
   }, [setShowGreeting]);
 
   useEffect(() => {
-    // Remove the name from local storage when the page is closed
     const handleBeforeUnload = () => {
       localStorage.removeItem("visitorName");
     };
     window.addEventListener("beforeunload", handleBeforeUnload);
 
-    // Clean up event listener on component unmount
     return () => {
       window.removeEventListener("beforeunload", handleBeforeUnload);
     };
@@ -29,7 +26,7 @@ function GreetingPopup({ setShowGreeting }) {
 
   return (
     name && (
-      <div className="fixed top-4 right-4 bg-purple-500 left-1/2 -translate-x-1/2 text-gray-100 rounded-lg md:right-4 md:left-auto p-4 shadow-lg z-[101]">
+      <div className="fixed top-4 right-4 bg-white left-1/2 -translate-x-1/2 text-gray-800 rounded-lg md:right-4 md:left-auto p-4 shadow-lg z-[101] border border-purple-500 border-l-4">
         <h1 className="text-sm font-bold">Welcome, {name}!</h1>
         <p>Thanks for visiting my site.</p>
       </div>

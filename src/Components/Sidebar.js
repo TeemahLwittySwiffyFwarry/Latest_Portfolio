@@ -46,9 +46,10 @@ const Sidebar = ({ darkMode, toggleDarkMode, toggleCollapse, collapsed }) => {
       </div>
 
       <div className={`fixed transition-all duration-300 z-40 h-screen ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-800'} ${collapsed ? 'w-16' : 'w-full md:w-60'} ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'} md:left-0 md:border-r border-gray-300 overflow-hidden p-2 md:ml-4`}>
+        <Link to="/">
         <div className="flex items-center justify-between mb-4 px-2 pt-2">
           <img src="./logo2.png" alt="Logo" className="h-12 w-16" />
-        </div>
+        </div></Link>
 
         <nav className="flex-grow overflow-y-auto">
           <ul className="space-y-6 h-[calc(100vh-100px)]">

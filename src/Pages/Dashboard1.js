@@ -57,7 +57,7 @@ const Dashboard = ({ darkMode }) => {
         
       </motion.div> */}
 
-      <div className={`text-center border-2 rounded-md p-2 ${darkMode ? 'bg-purple-800': 'bg-purple-200'}`}>
+      <div className={`text-center rounded-md p-2 ${darkMode ? 'bg-purple-800': 'bg-purple-200'}`}>
         <p className="mt-2">
           I am passionate about using technology to solve real-world problems and make life easier for others. 
           My goal is to continuously learn and grow as a developer while contributing to meaningful projects that 

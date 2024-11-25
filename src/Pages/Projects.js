@@ -25,6 +25,16 @@ const projectsData = [
   },
   {
     id: 3,
+    title: "Oluwayemisi Oladosu's Portfolio",
+    description: "A responsive portfolio built with React and Tailwind CSS, featuring interactive project displays, smooth animations, and easy navigation, showcasing my development skills with a clean, engaging design.",
+    type: "Full Stack",
+    techStack: ["React", "Tailwind CSS, Python django"],
+    videoUrl: "/port_fe.mp4",
+    webLink: "https://oluwayemisi-oladosu-portfolio.netlify.app",
+    githubLink: "https://github.com/TeemahLwittySwiffyFwarry/Latest_Portfolio",
+  },
+  {
+    id: 4,
     title: "Reliance Errand",
     description: "This is a straightforward errand application that enables users to send individual messages both locally and internationally. It is currently a work in progress as I continue to develop it.",
     type: "Front End Project",
@@ -34,7 +44,7 @@ const projectsData = [
     githubLink: "https://github.com/TeemahLwittySwiffyFwarry/Reliance_Global_Errand-/tree/master",
   },
   {
-    id: 4,
+    id: 5,
     title: "Receipt Management System",
     description: "This project was developed at LASOP to primarily assess students' proficiency in JavaScript.",
     type: "Front End Project",
@@ -44,7 +54,7 @@ const projectsData = [
     githubLink: "https://github.com/TeemahLwittySwiffyFwarry/School_Receipt",
   },
   {
-    id: 5,
+    id: 6,
     title: "Blog API",
     description: "This API is utilized by marzwellschools.com and includes sections for creating, listing, and managing blog posts.",
     type: "Backend Project",
@@ -54,7 +64,7 @@ const projectsData = [
     githubLink: "https://github.com/TeemahLwittySwiffyFwarry/Marzwell_Blog_Backend",
   },
   {
-    id: 6,
+    id: 7,
     title: "Marzwell API",
     description: "This API powers marzwellschools.com, with backend functionalities that encompass testimonials, registrations, and contact messages.",
     type: "Backend Project",
@@ -64,7 +74,7 @@ const projectsData = [
     githubLink: "https://github.com/TeemahLwittySwiffyFwarry/Marzwell_BE",
   },
   {
-    id: 7,
+    id: 8,
     title: "Goufer API",
     description: "This API was created by a team of four backend developers. I specifically developed the Chat App API, incorporating Django Channels to enable real-time communication through WebSockets.",
     type: "Backend Project",
@@ -72,6 +82,17 @@ const projectsData = [
     videoUrl: "/chat.mp4",
     webLink: "https://goufer-api-obm37ikxiq-uc.a.run.app/api/v1/",
     githubLink: "https://github.com/goufers/goufer-api/",
+  },
+
+  {
+    id: 9,
+    title: "Portfolio API",
+    description: "Django-based backend supporting project data, reviews, and feedback, providing secure, efficient data handling and seamless integration with the frontend.",
+    type: "Backend Project",
+    techStack: ["Python", "Django", "DBSQlite3"],
+    videoUrl: "/port_be.mp4",
+    webLink: "https://teemahportfolio.pythonanywhere.com/api/reviews/",
+    githubLink: "https://github.com/TeemahLwittySwiffyFwarry/Portfolio_BE/",
   },
 ];
 
@@ -94,7 +115,7 @@ const ProjectCard = ({ project, darkMode }) => {
 
   return (
     <motion.div
-    className={`relative p-6 rounded-lg shadow-lg border transition-transform transform hover:scale-105 overflow-auto ${
+    className={`relative p-6 rounded-lg shadow-lg border border-l-4 border-purple-500 transition-transform transform hover:scale-105 overflow-auto ${
       darkMode ? 'bg-gray-800 text-white' : 'bg-gray-100 text-gray-800' // Updated background and text color
     }`}
       initial={{ opacity: 0, y: 20 }}
@@ -160,7 +181,7 @@ const ProjectCard = ({ project, darkMode }) => {
 
 const Projects = ({ darkMode = true }) => {
   return (
-    <div className="p-6">
+    <div className="p-6 font-sans">
       <h1 className={`text-3xl font-bold mb-6 text-center ${darkMode ? 'text-white' : 'text-black'}`}>Projects</h1>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {projectsData.map((project) => (
